@@ -1,0 +1,25 @@
+#!/bin/sh
+eval "$(pyenv init -)"
+set -o errexit
+
+# set up global python virtualenv
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+GLOBAL_VERSION="3.9.4"
+GLOBAL_NAME=global_venv
+
+pyenv install $GLOBAL_VERSION --skip-existing
+
+[[ ! "$(pyenv virtualenvs)" =~ "$GLOBAL_NAME" ]] && \
+  pyenv virtualenv $GLOBAL_VERSION $GLOBAL_NAME
+eval "$(pyenv virtualenv-init -)"
+pyenv global $GLOBAL_NAME
+
+pip install cython numpy pandas requests pytest sklearn pycodestyle
+
+# install other python versions
+if [[ ! $OSTYPE == darwin* && ! $CPUTYPE == arm64 ]]; then
+  pyenv install 2.7.18 --skip-existing
+  pyenv install 3.6.13 --skip-existing
+  pyenv install 3.8.9 --skip-existing
+fi

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+pkglist=(
+  conraads.bracket-pair-colorizer-2
+  ms-python.python
+  shardulm94.trailing-spaces
+  visualstudioexptteam.vscodeintellicode
+  danields761.dracula-theme-from-intellij-pythoned
+)
+
+for i in ${pkglist[@]}; do
+  code --install-extension $i
+done

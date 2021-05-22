@@ -1,0 +1,16 @@
+# Minimal setup to get started
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "zero-sh/tap"
+
+brew "mas"
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "zplug"
+brew "zsh"
+
+cask "brave-browser"
+cask "iterm2"
+cask "slack"
+cask "visual-studio-code"
+cask "xquartz"

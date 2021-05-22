@@ -1,0 +1,13 @@
+brew "jq"
+brew "poetry"
+
+# python module dependencies
+brew "gcc"  # gcc, g++, gfortran, ...
+brew "openblas"
+
+cask "docker"
+cask "intellij-idea"
+cask "pycharm"
+
+# fonts
+cask "font-fira-code"

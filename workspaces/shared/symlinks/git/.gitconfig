@@ -1,0 +1,9 @@
+[user]
+	name = Elisabeth Bommes
+        email = elisabeth.bommes@gmail.com
+        username = ebommes
+[init]
+        defaultBranch = main
+[core]
+	editor = code --wait
+	excludesfile = ~/.global-gitignore
